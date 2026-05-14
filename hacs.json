@@ -1,0 +1,8 @@
+{
+  "name": "NeoSmart Blinds",
+  "zip_release": true,
+  "filename": "neosmartblinds100.zip",
+  "render_readme": true,
+  "domains": ["cover"],
+  "iot_class": ["Assumed State", "Local Polling"]
+}
