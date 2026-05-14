@@ -1,0 +1,35 @@
+set_favorite:
+  name: Set favorite position
+  description: Send the favorite position command for a blind.
+  target:
+    entity:
+      domain: cover
+      integration: neosmartblinds
+  fields:
+    favorite:
+      name: Favorite
+      description: Favorite position to trigger (1 or 2).
+      required: true
+      selector:
+        select:
+          options:
+            - 1
+            - 2
+
+sync_position:
+  name: Sync assumed position
+  description: Set the assumed position in Home Assistant without sending a command.
+  target:
+    entity:
+      domain: cover
+      integration: neosmartblinds
+  fields:
+    position:
+      name: Position
+      description: Position to set (0 or 100).
+      required: true
+      selector:
+        select:
+          options:
+            - 0
+            - 100

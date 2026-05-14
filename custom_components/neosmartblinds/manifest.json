@@ -1,0 +1,11 @@
+{
+  "domain": "neosmartblinds",
+  "documentation": "https://github.com/shahedsalehi/Home_Assistant_NeoSmartBlinds/blob/master/README.md",
+  "issue_tracker": "https://github.com/shahedsalehi/Home_Assistant_NeoSmartBlinds/issues",
+  "codeowners": ["4n0nD3v3l0p3r","mtgeekman","clara-j","gee-jay-bee"],
+  "name": "NeoSmartBlinds",
+  "version": "1.0.0",
+  "requirements": ["requests>=2.31.0", "aiohttp>=3.0.0"],
+  "config_flow": true,
+  "iot_class": "local_polling"
+}

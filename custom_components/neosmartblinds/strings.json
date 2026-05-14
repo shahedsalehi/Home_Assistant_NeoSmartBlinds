@@ -1,0 +1,109 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Setup NeoSmartBlinds",
+        "description": "Enter the details for your NeoSmartBlinds device.",
+        "data": {
+          "name": "Blind Name",
+          "host": "Hub IP Address",
+          "hub_id": "Hub ID",
+          "blind_code": "Blind Code / Device ID",
+          "close_time": "Close Time (seconds)",
+          "protocol": "Protocol (http or tcp)",
+          "port": "Port",
+          "rail": "Rail (1, 2, or 3)",
+          "percent_support": "Percent Support (0, 1, or 2)",
+          "motor_code": "Motor Code",
+          "start_position": "Start Position (%)",
+          "parent_group": "Parent Group Code",
+          "tilt_support": "Enable Tilt Controls",
+          "io_timeout": "IO Timeout (seconds)",
+          "command_backoff": "Command Backoff (seconds)",
+          "command_aggregation": "Command Aggregation (seconds)",
+          "retry_count": "Retry Count",
+          "retry_delay": "Retry Delay (seconds)",
+          "debug_logging": "Debug Logging"
+        },
+        "data_description": {
+          "name": "Friendly name shown in Home Assistant.",
+          "host": "Controller IP address from the Neo Smart Blinds app or your router.",
+          "hub_id": "Controller ID from the Neo Smart Blinds app (Your Controllers).",
+          "blind_code": "Blind or room code from the blind advanced page in the app (ID1.ID2-CHANNEL).",
+          "close_time": "Seconds for the blind to move from fully open to closed.",
+          "protocol": "Use http (8838) or tcp (8839).",
+          "port": "Controller port. HTTP is 8838, TCP is 8839.",
+          "rail": "Rail to move: 1 top, 2 bottom, 3 both (for supported motors).",
+          "percent_support": "0 favorites only, 1 hub handles percent, 2 estimate using close_time.",
+          "motor_code": "Motor code from the app (shown under the blind code).",
+          "start_position": "Initial position used on HA startup when percent support is enabled.",
+          "parent_group": "Room/group code for aggregation (ID1.ID2-15).",
+          "tilt_support": "Show tilt controls in the UI (micro up/down).",
+          "io_timeout": "Network timeout for each request.",
+          "command_backoff": "Minimum delay between commands to the hub.",
+          "command_aggregation": "Window to aggregate group commands.",
+          "retry_count": "Number of retries after a failed request.",
+          "retry_delay": "Delay between retry attempts.",
+          "debug_logging": "Enable extra debug logs for this entry."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Invalid authentication",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "NeoSmartBlinds Options",
+        "data": {
+          "name": "Blind Name",
+          "host": "Hub IP Address",
+          "hub_id": "Hub ID",
+          "blind_code": "Blind Code / Device ID",
+          "close_time": "Close Time (seconds)",
+          "protocol": "Protocol (http or tcp)",
+          "port": "Port",
+          "rail": "Rail (1, 2, or 3)",
+          "percent_support": "Percent Support (0, 1, or 2)",
+          "motor_code": "Motor Code",
+          "start_position": "Start Position (%)",
+          "parent_group": "Parent Group Code",
+          "tilt_support": "Enable Tilt Controls",
+          "io_timeout": "IO Timeout (seconds)",
+          "command_backoff": "Command Backoff (seconds)",
+          "command_aggregation": "Command Aggregation (seconds)",
+          "retry_count": "Retry Count",
+          "retry_delay": "Retry Delay (seconds)",
+          "debug_logging": "Debug Logging"
+        },
+        "data_description": {
+          "name": "Friendly name shown in Home Assistant.",
+          "host": "Controller IP address from the Neo Smart Blinds app or your router.",
+          "hub_id": "Controller ID from the Neo Smart Blinds app (Your Controllers).",
+          "blind_code": "Blind or room code from the blind advanced page in the app (ID1.ID2-CHANNEL).",
+          "close_time": "Seconds for the blind to move from fully open to closed.",
+          "protocol": "Use http (8838) or tcp (8839).",
+          "port": "Controller port. HTTP is 8838, TCP is 8839.",
+          "rail": "Rail to move: 1 top, 2 bottom, 3 both (for supported motors).",
+          "percent_support": "0 favorites only, 1 hub handles percent, 2 estimate using close_time.",
+          "motor_code": "Motor code from the app (shown under the blind code).",
+          "start_position": "Initial position used on HA startup when percent support is enabled.",
+          "parent_group": "Room/group code for aggregation (ID1.ID2-15).",
+          "tilt_support": "Show tilt controls in the UI (micro up/down).",
+          "io_timeout": "Network timeout for each request.",
+          "command_backoff": "Minimum delay between commands to the hub.",
+          "command_aggregation": "Window to aggregate group commands.",
+          "retry_count": "Number of retries after a failed request.",
+          "retry_delay": "Delay between retry attempts.",
+          "debug_logging": "Enable extra debug logs for this entry."
+        }
+      }
+    }
+  }
+}
