@@ -35,6 +35,10 @@ from .const import (
 
 _LOGGER = logging.getLogger(__name__)
 
+RAIL_SCHEMA = vol.All(vol.Coerce(int), vol.In([1, 2, 3]))
+PERCENT_SUPPORT_SCHEMA = vol.All(vol.Coerce(int), vol.In([0, 1, 2]))
+
+
 class NeoSmartBlindsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle a config flow for NeoSmartBlinds."""
 
@@ -93,8 +97,8 @@ class NeoSmartBlindsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             vol.Optional(CONF_CLOSE_TIME, default=20): int,
             vol.Optional(CONF_PROTOCOL, default="http"): vol.In(["http", "tcp"]),
             vol.Optional(CONF_PORT, default=8838): int,
-            vol.Optional(CONF_RAIL, default=1): vol.In([1, 2, 3]),
-            vol.Optional(CONF_PERCENT_SUPPORT, default=0): vol.In([0, 1, 2]),
+            vol.Optional(CONF_RAIL, default=1): RAIL_SCHEMA,
+            vol.Optional(CONF_PERCENT_SUPPORT, default=0): PERCENT_SUPPORT_SCHEMA,
             vol.Optional(CONF_MOTOR_CODE, default=""): str,
             vol.Optional(CONF_START_POSITION, default=50): int,
             vol.Optional(CONF_PARENT, default=""): str,
@@ -173,8 +177,8 @@ class NeoSmartBlindsOptionsFlowHandler(config_entries.OptionsFlow):
             vol.Optional(CONF_CLOSE_TIME, default=safe_int(options.get(CONF_CLOSE_TIME, data.get(CONF_CLOSE_TIME)), 20)): int,
             vol.Optional(CONF_PROTOCOL, default=safe_str(options.get(CONF_PROTOCOL, data.get(CONF_PROTOCOL, "http")), "http")): vol.In(["http", "tcp"]),
             vol.Optional(CONF_PORT, default=safe_int(options.get(CONF_PORT, data.get(CONF_PORT)), 8838)): int,
-            vol.Optional(CONF_RAIL, default=safe_int(options.get(CONF_RAIL, data.get(CONF_RAIL)), 1)): vol.In([1, 2, 3]),
-            vol.Optional(CONF_PERCENT_SUPPORT, default=safe_int(options.get(CONF_PERCENT_SUPPORT, data.get(CONF_PERCENT_SUPPORT)), 0)): vol.In([0, 1, 2]),
+            vol.Optional(CONF_RAIL, default=safe_int(options.get(CONF_RAIL, data.get(CONF_RAIL)), 1)): RAIL_SCHEMA,
+            vol.Optional(CONF_PERCENT_SUPPORT, default=safe_int(options.get(CONF_PERCENT_SUPPORT, data.get(CONF_PERCENT_SUPPORT)), 0)): PERCENT_SUPPORT_SCHEMA,
             vol.Optional(CONF_MOTOR_CODE, default=safe_str(options.get(CONF_MOTOR_CODE, data.get(CONF_MOTOR_CODE)), "")): str,
             vol.Optional(CONF_START_POSITION, default=safe_int(options.get(CONF_START_POSITION, data.get(CONF_START_POSITION)), 50)): int,
             vol.Optional(CONF_PARENT, default=safe_str(options.get(CONF_PARENT, data.get(CONF_PARENT)), "")): str,
